@@ -20,6 +20,9 @@ class User(db.Model):
     return f"User('{self.username}', '{self.email}')"
 
 @app.route("/")
+def root():
+    return render_template('home.html', subtitle='Home Page', text='This is the home page')
+
 @app.route("/home")
 def home():
     return render_template('home.html', subtitle='Home Page', text='This is the home page')
